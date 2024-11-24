@@ -83,6 +83,8 @@
     width: 100%; /* 부모 요소의 전체 폭 사용 */
     max-width: 100%; /* 화면을 넘지 않도록 제한 */
     box-sizing: border-box; /* 여백 포함 */
+    justify-content: space-between;  /* 아이템 간 균등 배치 */
+    align-items: flex-start; /* 아이템 상단 정렬 */
     }
 
     .custom-gif-container {
@@ -120,7 +122,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%; /* 비디오 컨테이너의 폭 설정 */
+    width: 30%; /*비디오 컨테이너의 폭 설정*/
+    /* width: calc(50% - 10px); */
     aspect-ratio: 16 / 9; /* 16:9 비율 고정 */
     max-width: 100%; /* 모바일에서 폭이 화면 크기를 넘지 않도록 제한 */
     box-sizing: border-box; /* 여백 포함 */
@@ -128,10 +131,11 @@
 
     .custom-gif-container-4vid img {
         width: 100%; /* 컨테이너에 맞게 비디오 크기 조정 */
-        height: auto; /* 비율을 유지하면서 높이 조정 */
+        /* height: auto; 비율을 유지하면서 높이 조정 */
         max-width: 100%; /* 화면을 넘지 않도록 제한 */
-        /* height: 100%; 높이도 컨테이너에 맞춤 */
+        height: 100%; /*높이도 컨테이너에 맞춤*/
         object-fit: contain; /* 비디오 비율 유지하며 맞춤 */
+        margin-bottom: 5px;
     }
 
     /* GIF container for 3 videos */
@@ -158,6 +162,7 @@
     aspect-ratio: 16 / 9; /* 16:9 비율 고정 */
     max-width: 100%; /* 모바일에서 폭이 화면 크기를 넘지 않도록 제한 */
     box-sizing: border-box; /* 여백 포함 */
+    margin-bottom: 10px;    /* 두 줄 간격 일정하게 유지 */
     }
 
     .custom-gif-container-3vid img {
@@ -172,7 +177,8 @@
         text-align: center;
         margin-top: 5px;
         font-weight: bold; 
-        font-size: 15px; 
+        font-size: 15px;  
+        margin: 0;                /* 기본 여백 제거 */
     }
 
     .custom-top-caption {
