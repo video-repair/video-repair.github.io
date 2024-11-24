@@ -732,43 +732,80 @@
     <div class="custom-slider-container">
       <div class="custom-slider" id="custom-slider-iter">
 
+        <div class="custom-slide">
+          <div class="custom-top-caption">"A mother and her child feed ducks at a pond."</div> <!-- Top caption added -->
+          <div class="custom-gif-wrapper">
+              <div class="custom-gif-container-3vid">
+                <img src="./static/images/iter/duck/iter0.gif" alt="GIF 1">
+                <div class="custom-caption">Initial video (T2V-turbo)</div>
+            </div>
+            <div class="custom-gif-container-3vid">
+                <img src="./static/images/iter/duck/iter1.gif" alt="GIF 2">
+                <div class="custom-caption">Iter 1</div>
+            </div>
+              <div class="custom-gif-container-3vid">
+                  <img src="./static/images/iter/duck/iter2.gif" alt="GIF 4">
+                  <div class="custom-caption">Iter 2</div>
+              </div>
+          </div>
+        </div>
+
           <!-- 첫 번째 세트 -->
           <div class="custom-slide">
-              <div class="custom-top-caption">"A dog sitting under a umbrella on a sunny beach"</div> <!-- Top caption added -->
+              <div class="custom-top-caption">"A family of four set up a tent and build a campfire, enjoying a night of camping under the stars"</div> <!-- Top caption added -->
               <div class="custom-gif-wrapper">
                   <div class="custom-gif-container-3vid">
-                    <img src="./static/images/vc2/dog/init.gif" alt="GIF 1">
-                    <div class="custom-caption">VideoCrafter2</div>
+                    <img src="./static/images/iter/camp/iter0.gif" alt="GIF 1">
+                    <div class="custom-caption">Initial video (T2V-turbo)</div>
                 </div>
                 <div class="custom-gif-container-3vid">
-                    <img src="./static/images/vc2/dog/opt2i.gif" alt="GIF 2">
-                    <div class="custom-caption">OPT2I</div>
+                    <img src="./static/images/iter/camp/iter1.gif" alt="GIF 2">
+                    <div class="custom-caption">Iter 1</div>
                 </div>
                   <div class="custom-gif-container-3vid">
-                      <img src="./static/images/vc2/dog/ours.gif" alt="GIF 4">
-                      <div class="custom-caption">Ours (VideoRepair) </div>
+                      <img src="./static/images/iter/camp/iter2.gif" alt="GIF 4">
+                      <div class="custom-caption">Iter 2 </div>
                   </div>
               </div>
           </div>
+
           <!-- 두 번째 세트 -->
           <div class="custom-slide">
-            <div class="custom-top-caption">"With the style of pointilism, A green apple and a black backpack."</div> <!-- Top caption added -->
+              <div class="custom-top-caption">"A bright yellow umbrella with a wooden handle. It's compact and easy to carry."</div> <!-- Top caption added -->
+              <div class="custom-gif-wrapper">
+                  <div class="custom-gif-container-3vid">
+                    <img src="./static/images/iter/umb/iter0.gif" alt="GIF 1">
+                    <div class="custom-caption">Initial video (T2V-turbo)</div>
+                </div>
+                <div class="custom-gif-container-3vid">
+                    <img src="./static/images/iter/umb/iter1.gif" alt="GIF 2">
+                    <div class="custom-caption">Iter 1</div>
+                </div>
+                  <div class="custom-gif-container-3vid">
+                      <img src="./static/images/iter/umb/iter2.gif" alt="GIF 4">
+                      <div class="custom-caption">Iter 2 </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- 두 번째 세트 -->
+          <div class="custom-slide">
+            <div class="custom-top-caption">"A group of six dancers perform a ballet on stage, their movements synchronized and graceful."</div> <!-- Top caption added -->
             <div class="custom-gif-wrapper">
                 <div class="custom-gif-container-3vid">
-                  <img src="./static/images/vc2/apple/init.gif" alt="GIF 1">
-                  <div class="custom-caption">VideoCrafter2</div>
+                  <img src="./static/images/iter/dance/iter0.gif" alt="GIF 1">
+                  <div class="custom-caption">Initial video (T2V-turbo)</div>
               </div>
               <div class="custom-gif-container-3vid">
-                  <img src="./static/images/vc2/apple/opt2i.gif" alt="GIF 2">
-                  <div class="custom-caption">OPT2I</div>
+                  <img src="./static/images/iter/dance/iter1.gif" alt="GIF 2">
+                  <div class="custom-caption">Iter 1</div>
               </div>
                 <div class="custom-gif-container-3vid">
-                    <img src="./static/images/vc2/apple/ours.gif" alt="GIF 4">
-                    <div class="custom-caption">Ours (VideoRepair) </div>
+                    <img src="./static/images/iter/dance/iter2.gif" alt="GIF 4">
+                    <div class="custom-caption">Iter 2 </div>
                 </div>
             </div>
         </div>
-
 
       <!-- 좌우 화살표 -->
       <button class="custom-arrow custom-prev" onclick="moveCustomSlide('custom-slider-iter', -1)">&#10094;</button>
@@ -779,7 +816,7 @@
         <span class="dot" onclick="setCurrentSlide(1)"></span>
         <span class="dot" onclick="setCurrentSlide(2)"></span>
         <span class="dot" onclick="setCurrentSlide(3)"></span>
-        <span class="dot" onclick="setCurrentSlide(4)"></span>
+        <!-- <span class="dot" onclick="setCurrentSlide(4)"></span> -->
         <!-- <span class="dot" onclick="setCurrentSlide(5)"></span> -->
       </div>
     </div>
@@ -853,7 +890,7 @@
 
         <!-- ######################### -->
 
-        <p style="font-size:18px; margin-top:30px; margin-bottom:10px">As demonstrated in the samples above, our VideoRepair is the only method to reliably improve temporal quality of inadequate samples without any unwanted trade-offs. This allows for newfound synergistic effects among models: functions such as personalization can be freely utilized while borrowing the temporal consistency of external models.</p>
+        <!-- <p style="font-size:18px; margin-top:30px; margin-bottom:10px">As demonstrated in the samples above, our VideoRepair is the only method to reliably improve temporal quality of inadequate samples without any unwanted trade-offs. This allows for newfound synergistic effects among models: functions such as personalization can be freely utilized while borrowing the temporal consistency of external models.</p> -->
     </div>
   </section>
 
