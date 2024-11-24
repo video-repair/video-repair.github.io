@@ -104,6 +104,20 @@
         height: auto;
     }
 
+    .custom-gif-container-3vid {    /* GIF container for 3 videos */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;    /* Vertically centers the video within the container */
+          align-items: center;        /* Horizontally centers the video within the container */
+          width: 33.33%;              /* Adjusted width to evenly divide space for 3 videos */
+          height: 100%;               /* Ensures the height of the container is used */
+    }
+
+    .custom-gif-container-3vid img {
+        width: 100%;
+        height: auto;
+    }
+
     .custom-caption {
         text-align: center;
         margin-top: 5px;
@@ -151,6 +165,10 @@
 
     .custom-gif-container-4vid:not(:last-child) {
         margin-right: 20px;
+    }
+
+    .custom-gif-container-3vid:not(:last-child) {
+    margin-right: 20px;
     }
 
     .dots-container {
@@ -491,7 +509,7 @@
       <div class="spacer"></div>
 
       <div class="custom-slider-container">
-        <div class="custom-slider" id="custom-slider">
+        <div class="custom-slider" id="custom-slider-turbo">
 
             <!-- 첫 번째 세트 -->
             <div class="custom-slide">
@@ -609,8 +627,8 @@
         </div>
     
         <!-- 좌우 화살표 -->
-        <button class="custom-arrow custom-prev" onclick="moveCustomSlide(-1)">&#10094;</button>
-        <button class="custom-arrow custom-next" onclick="moveCustomSlide(1)">&#10095;</button>
+        <button class="custom-arrow custom-prev" onclick="moveCustomSlide('custom-slider-turbo', -1)">&#10094;</button>
+        <button class="custom-arrow custom-next" onclick="moveCustomSlide('custom-slider-turbo', 1)">&#10095;</button>
 
         <div class="dots-container">
           <span class="dot" onclick="setCurrentSlide(0)"></span>
@@ -632,7 +650,7 @@
       <div class="spacer"></div>
 
       <div class="custom-slider-container">
-        <div class="custom-slider" id="custom-slider">
+        <div class="custom-slider" id="custom-slider-vc">
 
             <!-- 첫 번째 세트 -->
             <div class="custom-slide">
@@ -752,8 +770,8 @@
         </div>
     
         <!-- 좌우 화살표 -->
-        <button class="custom-arrow custom-prev" onclick="moveCustomSlide(-1)">&#10094;</button>
-        <button class="custom-arrow custom-next" onclick="moveCustomSlide(1)">&#10095;</button>
+        <button class="custom-arrow custom-prev" onclick="moveCustomSlide('custom-slider-vc', -1)">&#10094;</button>
+        <button class="custom-arrow custom-next" onclick="moveCustomSlide('custom-slider-vc', 1)">&#10095;</button>
 
         <div class="dots-container">
           <span class="dot" onclick="setCurrentSlide(0)"></span>
@@ -902,15 +920,39 @@ $(function(){
         });
     }
 
-    function moveCustomSlide(direction) {
-        currentCustomIndex += direction;
-        if (currentCustomIndex < 0) {
-            currentCustomIndex = totalCustomSlides - 1;
-        } else if (currentCustomIndex >= totalCustomSlides) {
-            currentCustomIndex = 0;
-        }
-        customSlider.style.transform = `translateX(-${currentCustomIndex * 100}%)`;
-        updateDots();
+    // function moveCustomSlide(direction) {
+    //     currentCustomIndex += direction;
+    //     if (currentCustomIndex < 0) {
+    //         currentCustomIndex = totalCustomSlides - 1;
+    //     } else if (currentCustomIndex >= totalCustomSlides) {
+    //         currentCustomIndex = 0;
+    //     }
+    //     customSlider.style.transform = `translateX(-${currentCustomIndex * 100}%)`;
+    //     updateDots();
+    // }
+
+    const sliderState = {
+      'custom-slider-t2v': 0,
+      'custom-slider-vc2': 0,
+    };
+
+    function moveCustomSlide(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      const slides = slider.querySelectorAll('.custom-slide');
+      const totalSlides = slides.length;
+
+      // 슬라이더 상태 업데이트
+      sliderState[sliderId] += direction;
+      if (sliderState[sliderId] < 0) {
+        sliderState[sliderId] = totalSlides - 1;
+      } else if (sliderState[sliderId] >= totalSlides) {
+        sliderState[sliderId] = 0;
+      }
+
+      // 슬라이더 이동
+      slider.style.transform = `translateX(-${sliderState[sliderId] * 100}%)`;
+
+      // 추가적으로 필요한 업데이트가 있다면 여기에 추가
     }
 
     function setCurrentSlide(index) {
