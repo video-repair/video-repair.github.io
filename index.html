@@ -230,6 +230,18 @@
       font-weight: normal;
       font-size: 10px; /* Adjust to desired size */
     }
+    @media (max-width: 768px) {
+            .custom-gif-container-4vid {
+                width: 45%; /* 모바일에서 비디오 컨테이너 너비 조정 */
+                aspect-ratio: 16 / 9; /* 동일 비율 유지 */
+            }
+        }
+    @media (max-width: 768px) {
+        .custom-gif-container-3vid {
+            width: 45%; /* 모바일에서 비디오 컨테이너 너비 조정 */
+            aspect-ratio: 16 / 9; /* 동일 비율 유지 */
+        }
+    }
   </style>
 </head>
 <body>
@@ -493,15 +505,24 @@
                 <div class="custom-gif-wrapper">
                     <div class="custom-gif-container-4vid">
                       <img src="./static/images/turbo/bear_pizza/init.gif" alt="GIF 1">
-                      <div class="custom-caption">T2V-turbo</div>
+                      <div class="custom-caption">
+                        <!-- T2V-turbo -->
+                        <a href="https://arxiv.org/abs/2405.18750" target="_blank" rel="noopener noreferrer">T2V-turbo</a>
+                      </div>
                   </div>
                   <div class="custom-gif-container-4vid">
                       <img src="./static/images/turbo/bear_pizza/opt2i.gif" alt="GIF 2">
-                      <div class="custom-caption">OPT2I</div>
+                      <div class="custom-caption">
+                        <!-- OPT2I -->
+                        <a href="https://arxiv.org/abs/2403.17804" target="_blank" rel="noopener noreferrer">OPT2I</a>
+                      </div>
                   </div>
                     <div class="custom-gif-container-4vid">
                         <img src="./static/images/turbo/bear_pizza/vico.gif" alt="GIF 3">
-                        <div class="custom-caption">Vico</div>
+                        <div class="custom-caption">
+                          <!-- Vico -->
+                          <a href="https://arxiv.org/abs/2407.06182" target="_blank" rel="noopener noreferrer">Vico</a>
+                        </div>
                     </div>
                     <div class="custom-gif-container-4vid">
                         <img src="./static/images/turbo/bear_pizza/ours.gif" alt="GIF 4">
