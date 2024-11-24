@@ -434,73 +434,10 @@
   <div class="hero-body">
     <div class="container is-max-desktop"  style="margin-top:30px;">
       <div class="section-title has-text-centered">
-        <h2 class="title is-3">Experimental Results</h2>
+        <h2 class="title is-3">Qualitative Results</h2>
       </div>
 
       <div class="spacer"></div>
-
-
-  <!-- <div class="section-title has-text-centered">
-    <h2 class="title is-4">T2V-turbo + VideoRepair</h2>
-  </div> -->
-
-  
-  <!-- <div id="results-carousel" class="carousel results-carousel">
-
-
-    <div class="item">
-      <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5">
-        <div class="desc">Four children and three dogs having a picnic in a park.</div>
-        <div class="video">
-          <img src="./static/images/comp/park0.gif" width="100%" />
-        </div>
-        <div class="video">
-          <img src="./static/images/comp/park1.gif" width="100%" />
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="item">
-      <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5">
-        <div class="desc">A child building a sandcastle on the left of a beach umbrella.</div>
-        <div class="video">
-          <img src="./static/images/comp/beach0.gif" width="100%" />
-        </div>
-        <div class="video">
-          <img src="./static/images/comp/beach1.gif" width="100%" />
-        </div>
-      </div>
-    </div>
-
-      </div>   
-
-      <div class="item">
-        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5">
-          <div class="desc">Blue apple bouncing near a pink tree.</div>
-          <div class="video">
-            <img src="./static/images/comp/apple0.gif" width="100%" />
-          </div>
-          <div class="video">
-            <img src="./static/images/comp/apple1.gif" width="100%" />
-          </div>
-        </div>
-      </div>  
-
-  </div> -->
-
-  
-  <!-- <div class="spacer"></div> -->
-
-
-  <!-- <div class="hero-body">
-    <div class="container is-max-desktop"  style="margin-top:30px;">
-      <div class="section-title has-text-centered">
-        <h2 class="title is-3">Experimental Results</h2>
-      </div>
-
-      <div class="spacer"></div> -->
 
       <div class="section-title has-text-centered">
         <h2 class="title is-4">1. Comparison with Baselines (T2V-turbo)</h2>
@@ -785,6 +722,70 @@
 
       <div class="spacer"></div>
 
+<!-- =========== -->
+    <div class="section-title has-text-centered">
+      <h2 class="title is-4">3. Iterative Refinement</h2>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="custom-slider-container">
+      <div class="custom-slider" id="custom-slider-iter">
+
+          <!-- 첫 번째 세트 -->
+          <div class="custom-slide">
+              <div class="custom-top-caption">"A dog sitting under a umbrella on a sunny beach"</div> <!-- Top caption added -->
+              <div class="custom-gif-wrapper">
+                  <div class="custom-gif-container-3vid">
+                    <img src="./static/images/vc2/dog/init.gif" alt="GIF 1">
+                    <div class="custom-caption">VideoCrafter2</div>
+                </div>
+                <div class="custom-gif-container-3vid">
+                    <img src="./static/images/vc2/dog/opt2i.gif" alt="GIF 2">
+                    <div class="custom-caption">OPT2I</div>
+                </div>
+                  <div class="custom-gif-container-3vid">
+                      <img src="./static/images/vc2/dog/ours.gif" alt="GIF 4">
+                      <div class="custom-caption">Ours (VideoRepair) </div>
+                  </div>
+              </div>
+          </div>
+          <!-- 두 번째 세트 -->
+          <div class="custom-slide">
+            <div class="custom-top-caption">"With the style of pointilism, A green apple and a black backpack."</div> <!-- Top caption added -->
+            <div class="custom-gif-wrapper">
+                <div class="custom-gif-container-3vid">
+                  <img src="./static/images/vc2/apple/init.gif" alt="GIF 1">
+                  <div class="custom-caption">VideoCrafter2</div>
+              </div>
+              <div class="custom-gif-container-3vid">
+                  <img src="./static/images/vc2/apple/opt2i.gif" alt="GIF 2">
+                  <div class="custom-caption">OPT2I</div>
+              </div>
+                <div class="custom-gif-container-3vid">
+                    <img src="./static/images/vc2/apple/ours.gif" alt="GIF 4">
+                    <div class="custom-caption">Ours (VideoRepair) </div>
+                </div>
+            </div>
+        </div>
+
+
+      <!-- 좌우 화살표 -->
+      <button class="custom-arrow custom-prev" onclick="moveCustomSlide('custom-slider-iter', -1)">&#10094;</button>
+      <button class="custom-arrow custom-next" onclick="moveCustomSlide('custom-slider-iter', 1)">&#10095;</button>
+
+      <div class="dots-container">
+        <span class="dot" onclick="setCurrentSlide(0)"></span>
+        <span class="dot" onclick="setCurrentSlide(1)"></span>
+        <span class="dot" onclick="setCurrentSlide(2)"></span>
+        <span class="dot" onclick="setCurrentSlide(3)"></span>
+        <span class="dot" onclick="setCurrentSlide(4)"></span>
+        <!-- <span class="dot" onclick="setCurrentSlide(5)"></span> -->
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
 
       <!-- 다른 예시들 (Before/after) -->
       <div class="section-title has-text-centered">
@@ -934,6 +935,7 @@ $(function(){
     const sliderState = {
       'custom-slider-turbo': 0,
       'custom-slider-vc': 0,
+      'custom-slider-iter': 0,
     };
 
     function moveCustomSlide(sliderId, direction) {
