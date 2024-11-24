@@ -90,39 +90,75 @@
         height: auto;
     }
 
-    .custom-gif-container-4vid {    /* GIF container for 4 videos (comparison part) */
+     /* GIF container for 4 videos (comparison part) */
+    /* .custom-gif-container-4vid {    
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Vertically centers the video within the container */
-        align-items: center;     /* Horizontally centers the video within the container */
-        width: 30%;              /* Keeps the same width as before for each video container */
-        height: 100%;            /* Ensures the height of the container is used */
+        justify-content: center; 
+        align-items: center;     
+        width: 30%;             
+        height: 100%;            
     }
 
     .custom-gif-container-4vid img {
         width: 100%;
         height: auto;
+    }  */
+
+    .custom-gif-container-4vid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%; /* 비디오 컨테이너의 폭 설정 */
+    aspect-ratio: 16 / 9; /* 16:9 비율 고정 */
+    max-width: 100%; /* 모바일에서 폭이 화면 크기를 넘지 않도록 제한 */
+    box-sizing: border-box; /* 여백 포함 */
     }
 
-    .custom-gif-container-3vid {    /* GIF container for 3 videos */
+    .custom-gif-container-4vid img {
+        width: 100%; /* 컨테이너에 맞게 비디오 크기 조정 */
+        height: 100%; /* 높이도 컨테이너에 맞춤 */
+        object-fit: contain; /* 비디오 비율 유지하며 맞춤 */
+    }
+
+    /* GIF container for 3 videos */
+    /* .custom-gif-container-3vid {    
           display: flex;
           flex-direction: column;
-          justify-content: center;    /* Vertically centers the video within the container */
-          align-items: center;        /* Horizontally centers the video within the container */
-          width: 33.33%;              /* Adjusted width to evenly divide space for 3 videos */
-          height: 100%;               /* Ensures the height of the container is used */
+          justify-content: center;   
+          align-items: center;      
+          width: 33.33%;             
+          height: 100%;            
     }
 
     .custom-gif-container-3vid img {
         width: 100%;
         height: auto;
+    } */
+
+    .custom-gif-container-3vid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%; /* 비디오 컨테이너의 폭 설정 */
+    aspect-ratio: 16 / 9; /* 16:9 비율 고정 */
+    max-width: 100%; /* 모바일에서 폭이 화면 크기를 넘지 않도록 제한 */
+    box-sizing: border-box; /* 여백 포함 */
+    }
+
+    .custom-gif-container-3vid img {
+        width: 100%; /* 컨테이너에 맞게 비디오 크기 조정 */
+        height: 100%; /* 높이도 컨테이너에 맞춤 */
+        object-fit: contain; /* 비디오 비율 유지하며 맞춤 */
     }
 
     .custom-caption {
         text-align: center;
         margin-top: 5px;
-        font-weight: bold; /* Makes the caption bold */
-        font-size: 15px; /* Increases the font size (adjust as needed) */
+        font-weight: bold; 
+        font-size: 15px; 
     }
 
     .custom-top-caption {
@@ -436,6 +472,9 @@
       <div class="section-title has-text-centered">
         <h2 class="title is-3">Qualitative Results</h2>
       </div>
+
+      <p style="font-size:18px; margin-top:30px; margin-bottom:10px"> We compare VideoRepair with recent refinement
+        methods, OPT2I and SLD, on the same T2V models (T2V-turbo and VideoCrafter2).</p>
 
       <div class="spacer"></div>
 
@@ -920,7 +959,7 @@
           <img src="./static/images/evalcraf.png" width="90%" />
         </div>
            
-        <p class="text-with-margin" style="font-size:18px;">VIDEOREPAIR surpasses all baselines in
+        <p class="text-with-margin" style="font-size:18px;">VideoRepair surpasses all baselines in
           the text-video alignment metric (evaluated using CLIP,
           BLIP2, and SAM-Track) across all four splits by a significant
           margin, achieving relative improvements of +2.87%
@@ -934,7 +973,7 @@
           <img src="./static/images/comp.png" width="70%" />
         </div>
            
-        <p class="text-with-margin" style="font-size:18px;">We observe that VIDEOREPAIR
+        <p class="text-with-margin" style="font-size:18px;">We observe that VideoRepair
           improves initial videos from both T2V models
           (VideoCrafter2 and T2V-turbo) in all three splits, achieving
           relative improvements of +8.76% and +5.40%, respectively.</p>
