@@ -205,7 +205,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- title -->
-            <h1 class="title is-1 publication-title">VideoRepair: Improving Text-to-Video Generation via Misalignment Evaluation and Localized Refinement</h1>
+            <h1 class="title is-1 publication-title">🎬 VideoRepair: Improving Text-to-Video Generation via Misalignment Evaluation and Localized Refinement</h1>
             
             <!-- authors -->
             <div class="is-size-5 publication-authors">
@@ -808,7 +808,7 @@
             </div>
         </div>
       </div>
-      
+
       <!-- 좌우 화살표 -->
       <button class="custom-arrow custom-prev" onclick="moveCustomSlide('custom-slider-iter', -1)">&#10094;</button>
       <button class="custom-arrow custom-next" onclick="moveCustomSlide('custom-slider-iter', 1)">&#10095;</button>
@@ -898,6 +898,51 @@
 
     <div class="spacer"></div>
 
+
+  <!-- Quantitative Results -->
+  <section class="hero is-small">
+
+    <div class="hero-body">
+      <!-- <div class="container"> -->
+      <div class="container is-max-desktop"  style="margin-top:5px;">
+
+        <div class="section-title has-text-centered">
+          <h2 class="title is-3">Quantitative Results</h2>
+        </div>
+        
+        <div class="spacer"></div>
+
+        <div class="section-title has-text-centered">
+          <h2 class="title is-4">1. EvalCrafter</h2>
+        </div>
+
+        <div class="item pd-image" style="text-align: center;">
+          <img src="./static/images/evalcraf.png" width="90%" />
+        </div>
+           
+        <p class="text-with-margin" style="font-size:18px;">VIDEOREPAIR surpasses all baselines in
+          the text-video alignment metric (evaluated using CLIP,
+          BLIP2, and SAM-Track) across all four splits by a significant
+          margin, achieving relative improvements of +2.87%
+          and +11.09% over VideoCrafter2 and T2V-turbo on initial video generations.</p>
+      
+        <div class="section-title has-text-centered">
+          <h2 class="title is-4">2. T2V-Compbench</h2>
+        </div>
+
+        <div class="item pd-image" style="text-align: center;">
+          <img src="./static/images/comp.png" width="70%" />
+        </div>
+           
+        <p class="text-with-margin" style="font-size:18px;">We observe that VIDEOREPAIR
+          improves initial videos from both T2V models
+          (VideoCrafter2 and T2V-turbo) in all three splits, achieving
+          relative improvements of +8.76% and +5.40%, respectively.</p>
+      
+
+      </div>
+    </div>
+  </section>
 
 
   <footer class="footer">
