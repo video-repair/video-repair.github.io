@@ -87,6 +87,8 @@ body {
 
 
 .publication-title {
+  display: inline-block;
+  max-width: 80%;
 }
 
 .publication-banner {
