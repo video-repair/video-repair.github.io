@@ -341,7 +341,7 @@
 <section class="hero teaser">
   <div class="container">
     <div class="hero-body" style="display: flex; justify-content: center;">
-      <img src="teaser_final_verylarge_v2.gif" style="width: 80%;">
+      <img src="teaser_final.gif" style="width: 80%;">
     </div>
   </div>
 </section>
@@ -366,21 +366,22 @@
             that automatically identifies fine-grained text-video
             misalignments and generates explicit spatial and textual
             feedback, enabling a T2V diffusion model to perform targeted,
-            localized refinements. VideoRepair consists of four
-            stages: In (1) video evaluation, we detect misalignments by
-            generating fine-grained evaluation questions and answering
-            those questions with MLLM. In (2) refinement planning, we
-            identify accurately generated objects and then create localized
-            prompts to refine other areas in the video. Next, in (3)
-            region decomposition, we segment the correctly generated
-            area using a combined grounding module. We regenerate
-            the video by adjusting the misaligned regions while preserving
-            the correct regions in (4) localized refinement. On
+            localized refinements. VideoRepair consists of two
+            stages: In (1) video refinement planning, we first detect misalignments
+            by generating fine-grained evaluation questions
+            and answering them using an MLLM. Based on video evaluation
+            outputs, we identify accurately generated objects and
+            construct localized prompts to precisely refine misaligned
+            regions. In (2) localized refinement, we enhance video alignment
+            by “repairing” the misaligned regions from the original
+            video while preserving the correctly generated areas.
+            This is achieved by frame-wise region decomposition using
+            our Region-Preserving Segmentation (RPS) module. On
             two popular video generation benchmarks (EvalCrafter and
             T2V-CompBench), VideoRepair substantially outperforms
             recent baselines across various text-video alignment metrics.
             We provide a comprehensive analysis of VideoRepair components
-            and qualitative examples. 
+            and qualitative examples.
         </div>
       </div>
     </div>
@@ -398,13 +399,12 @@
       <div class="column is-four-sixths">
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
-          <img src="static/images/method.png" alt="fig_pipeline"/>
+          <img src="static/images/new_method.png" alt="fig_pipeline"/>
           <p style=" font-size:18px; margin-top:30px;">
-            VideoRepair refines the generated video in four stages: (1) video evaluation (2)
-            refinement planning (3) region decomposition and (4) localized refinement. From the initial prompt p, we
-            first generate a fine-grained evaluation question set Qo and ask MLLM to answer it. Next, we identify O* by MLLM and plan how to refine
-            the other region by LLM. Using O*, we decompose the region by Molmo and Semantic SAM to get the region to keep. In the end, we
-            conduct localized refinement by the original frozen T2V model.
+            VideoRepair refines the generated video in two stages: (1) video refinement planning (Sec. 3.1),
+            (2) localized refinement (Sec. 3.2). Given the prompt p, we first generate a fine-grained evaluation question set and ask the MLLM to provide
+            answers. Next, we identify accurately generated objects O* and plan the refinement pr of other regions using MLLM/LLM. Based on O*,
+            we determine which regions to preserve or refine using the RPS module. Finally, we apply localized refinement with the original T2V model.
           </p>
       
         </div>
@@ -956,27 +956,28 @@
         </div>
 
         <div class="item pd-image" style="text-align: center;">
-          <img src="./static/images/evalcraf.png" width="90%" />
+          <img src="./static/images/new_evalcraf.png" width="90%" />
         </div>
            
-        <p class="text-with-margin" style="font-size:18px;">VideoRepair surpasses all baselines in
-          the text-video alignment metric (evaluated using CLIP,
-          BLIP2, and SAM-Track) across all four splits by a significant
-          margin, achieving relative improvements of +2.87%
-          and +11.09% over VideoCrafter2 and T2V-turbo on initial video generations.</p>
+        <p class="text-with-margin" style="font-size:18px;">VideoRepair consistently outperforms all
+          baselines across all four evaluation splits in text-video alignment,
+          achieving relative gains of +6.22%, +7.65%, and
+          +3.11% over VideoCrafter2, T2V-turbo, and CogVideoX-
+          5B, respectively.</p>
       
         <div class="section-title has-text-centered">
           <h2 class="title is-4">2. T2V-Compbench</h2>
         </div>
 
         <div class="item pd-image" style="text-align: center;">
-          <img src="./static/images/comp.png" width="70%" />
+          <img src="./static/images/new_comp.png" width="70%" />
         </div>
            
         <p class="text-with-margin" style="font-size:18px;">We observe that VideoRepair
-          improves initial videos from both T2V models
-          (VideoCrafter2 and T2V-turbo) in all three splits, achieving
-          relative improvements of +8.76% and +5.40%, respectively.</p>
+          improves the initial videos from all T2V models
+          (VideoCrafter2, T2V-turbo, and CogVideoX-5B) in all three
+          splits, with relative improvements of +8.16%, +8.69%, and
+          +15.87%, respectively.</p>
       
 
       </div>
